@@ -1,0 +1,124 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/helper.js"> </script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <title>uFR Example NodeJS</title>
+    <base href="/">
+</head>
+    <body>
+
+<div class="sidenav">
+
+  <a onclick="showAbout()" href="#">About</a>
+
+  <a onclick="showHome()" href="#">Home</a>
+
+  
+</div>
+
+        <div id="simplest_example_main_div" style="margin-left:10%; padding:1px 16px;height:1000px;">
+          <h2>uFR Simplest</h2>
+          
+        <div id="simplest_card_info_div">
+        <div id="reader_open_param_div>">
+            <div id="open_div">
+        <button id="btnReaderOpen" onclick="ReaderOpen(this)"> Reader Open</button> <br>
+            </div>
+            <div id="advanced_options" style="width:100%; float:left">
+              &nbsp&nbspAdvanced options
+              <input onclick="AdvancedOption()" id="checkAdvancedOption" type="checkbox"> </input>
+              <br> &nbsp Reader type:&nbsp
+              <input class="adv_option" disabled value="" type="text" id="reader_type" style="width:4%"></input>
+              &nbsp Port name:&nbsp
+              <input class="adv_option" disabled value="" type="text" id="port_name" style="width:7%"></input>
+              &nbsp Port interface:&nbsp
+              <input class="adv_option" disabled value="" type="text" id="port_interface" style="width:4%"></input>
+              &nbsp arg:&nbsp
+              <input disabled class="adv_option" value="" type="text" id="port_additional_arg" style="width:7%"></input>
+          </div>
+        </div>
+            
+              Card type: <input readonly   type ="text" name="simplest_card_type"> Uid Size: <input readonly type ="text" name="simplest_uid_size"> <br>
+              Card Serial: <input readonly type ="text" name="simplest_card_serial" style="width:80%"> 
+              
+                <hr style="width:100%; margin-top:5px;">
+         
+         </div>
+         
+         <div id="simplest_format_card_div">
+         
+            <button class="simplest_card_funcs_div" onclick="GetCardIdEx()" id="simplest_btnGetCardUID"> GET CARD INFO </button>
+            <button class="simplest_card_funcs_div" onclick="FormatCard()" id="simplest_btnFormatCard"> FORMAT CARD </button>
+            
+         </div>
+        
+         <div id="simplest_read_write_div" style="margin-top:5px;float:left;width:100%">
+                <div id="simplest_write_data_div" style=" float:left">
+                
+                    Data Write <br>
+                    <textarea onkeyup="charcountupdate(this.value)" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" id="linear_write_input"></textarea> <br>
+                    <button id="btnLinearWrite" onclick="LinearWrite()" style="width:100%"> LINEAR WRITE </button>
+                    <span id="charcount"></span>
+                    
+                </div>
+                
+                <div id="simplest_read_data_div" style="float:left;  margin-left:50px">
+                
+                     Data Read <br>
+                     <textarea id="linear_read_input" readonly style=" background-color: #F0F0F0"></textarea> <br>
+                     <button id="btnLinearRead" onclick="LinearRead()" style="width:100%"> LINEAR READ </button>
+                     
+                </div>
+        
+         </div>
+        
+            <div style="float:left; width:500px; padding:5px; margin:5px 0px 10px 0px; display:block; border: solid 1px;" id="simplest_information">
+            <br>
+          <label style="width: 100%; border-bottom:solid 1px; margin:5px"  id="function_status"> Function status: </label><br>
+          <label style="width: 100%;margin:5px" id="status"> Status: </label>
+          
+        </div>
+          
+        </div>
+        
+        <div id="about" style="display:none; margin-left:10%; padding:1px 16px;height:1000px;"> 
+        
+            <h2>This demo serves as an uFR Simplest implementation in browser along with extension and uFR shell.</h2> <br>
+            This example is using following functions: ReaderOpenEx, LinearRead, LinearWrite, LinearFormat.
+            For ReaderOpenEx, you'll need to provide suitable arguments such as reader type, port name/interface etc.
+            As for Linear Read/Write/Format by default those will use following default parameters:<br>
+            Linear Read: <br>
+            <ul>
+                 <li>Linear address will be 0, starting point of our reading. </li>
+                 <li>Length of data to be read will be based on type of card you're using <br>
+                 For example, if you are using MIFARE&#0174 1K - 752, MIFARE&#0174 4K 3440</li>
+                 <li>Key mode for authentication is MIFARE_AUTHENT1A, we'll be using Key A for authentication </li>
+                 <li>Authenticating key will be key 0 from you reader</li>           
+            </ul> <br>
+            Linear Write:
+            <ul>
+                 <li>Data for writing should be entered in text box bellow "Data write" caption </li>
+                 <li>Linear address is 0, starting point for our writing</li>
+                 <li>Data length is calculated based on how many bytes you entered in the text box</li>
+                 <li>Key mode for authentication is MIFARE_AUTHENT1A, we'll be using Key A for authentication</li>
+                 <li>Authenticating key will be key 0 from you reader</li>
+            </ul>  
+            
+            Format card:
+            <ul>
+                 <li>New keys A & B will be FF FF FF FF FF FF. 6 FF bytes. </li>
+                 <li>Block access bits will be 0 </li>
+                 <li>Sector trailer access byte is 1 </li>
+                 <li>Sector trailer byte9 will be 45 </li>
+                 <li>Key mode for authentication is MIFARE_AUTHENT1A, we'll be using Key A for authentication</li>
+                 <li>Authenticating key will be key 0 from you reader</li>
+            </ul>
+            <br>
+            Additionally, status will be displayed on the bottom, debug output of these functions in browser console, for example you'll see those when you press F12 in Chrome.
+        
+        </div>
+        
+        
+    </body>
+</html>

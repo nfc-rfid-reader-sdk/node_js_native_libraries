@@ -1,0 +1,24 @@
+{
+  "name": "uFR-Simplest-NodeJS-Example",
+  "version": "1.0.0",
+  "author": "D-Logic",
+  "description": "",
+  "keywords": [
+    "uFR",
+    "NodeJS"
+  ],
+  "scripts": {
+    "install": "npm install @saleae/ffi",
+    "start": "node server.js"
+  },
+  "homepage": "https://www.d-logic.net/code/nfc-rfid-reader-sdk",
+  "engines": {
+    "node": ">=12.19.0"
+  },
+  "main": "./server",
+  "dependencies": {
+    "ref": "1.3.5",
+    "@saleae/ffi": "^3.0.2",
+    "express": "^4.17.1"    
+  }
+}

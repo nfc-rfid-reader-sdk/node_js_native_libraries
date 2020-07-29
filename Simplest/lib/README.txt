@@ -1,0 +1,2 @@
+Depending on your Node version (x86/x64), change line in 'server.js' script accordingly.
+By default it is set to load x64 uFCoder library. Just change the name of the file to 'uFCoder-x86.dll' on line 9 in 'server.js' file.

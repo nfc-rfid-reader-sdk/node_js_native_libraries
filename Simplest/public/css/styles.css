@@ -1,0 +1,154 @@
+
+body
+{
+    font-family: arial;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-family: arial;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 20px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  float:clear;
+  padding: 5px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: solid 1px;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.card_input
+{
+    display:block;
+    width:100px;
+}
+
+
+#btnReaderOpen
+{
+    display:block;
+    width:200px;
+    height:50px;
+    font-size:14px;
+}
+#simplest_card_info_div
+{
+    float:left;
+    width:45%;
+    height:30%;
+}
+
+#simplest_format_card_div
+{
+    float:left;
+    width:55%;
+    height:30%;
+}
+.simplest_card_funcs_div
+{
+    margin-left:10%;
+    margin-top:6%;
+    width:200px;
+    height:100px;
+}
+
+#linear_write_input
+{
+    
+    resize: none;
+    width:500px;
+    height:300px;
+}
+
+#linear_read_input
+{
+    
+    resize: none;
+    width:500px;
+    height:300px;
+}
+button{
+    display: inline-block;
+        width:200px;
+    height:50px;
+    font-size:14px;
+    zoom: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+button:hover
+{
+   background:#f1f1f1;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+
+}
